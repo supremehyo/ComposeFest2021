@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7607ffb0-3d98-4c76-9f37-4f0011a3d03a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../week 2-1-Layouts in JetpackCompose/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../week 2-1-Layouts in JetpackCompose/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week 2-1-Layouts in JetpackCompose/2week/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../week 2-1-Layouts in JetpackCompose/2week/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -90,9 +92,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
