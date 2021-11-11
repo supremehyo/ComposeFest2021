@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.supremehyo.week2_1">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,13 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Week21">
         <activity
+            android:name=".MainActivity2"
+            android:exported="true"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.Week21.NoActionBar" />
+        <activity
+            android:name=".CustomLayoutActivity"
+            android:exported="true"
+            android:label="@string/title_activity_custom_layout"
+            android:theme="@style/Theme.Week21.NoActionBar" />
+        <activity
             android:name=".MainActivity3"
             android:exported="true"
             android:label="@string/title_activity_main3"
             android:theme="@style/Theme.Week21.NoActionBar" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
