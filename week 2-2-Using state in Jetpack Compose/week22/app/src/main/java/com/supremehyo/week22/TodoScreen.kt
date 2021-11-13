@@ -54,7 +54,13 @@ fun TodoScreen(
 }
 
 @Composable
-fun TodoRow(todo: TodoItem, onItemClicked: (TodoItem) -> Unit, modifier: Modifier = Modifier) {
+fun TodoRow(
+    todo: TodoItem,
+    onItemClicked: (TodoItem) -> Unit,
+    modifier: Modifier = Modifier,
+    iconAlpha: Float = remember(todo.id) { randomTint() }) //여기에 매계변수에 있다면
+//로컬변수로 있을때는 컴포저블이 메모리에 생성될때 제어하지 못하지만 여기 있으면 제어가 가능하다.
+{
     Row(
         modifier = modifier//상위 컴포저블에서 넣어준 modifier를 row에 적용하도록 하는 동작
             .clickable { onItemClicked(todo) }
@@ -62,7 +68,10 @@ fun TodoRow(todo: TodoItem, onItemClicked: (TodoItem) -> Unit, modifier: Modifie
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(todo.task)
-        val iconAlpha = randomTint() //랜덤값 생성
+      //  val iconAlpha = randomTint() //랜덤값 생성
+        val iconAlpha: Float = remember(todo.id) { randomTint() }//todolist 를
+        //재구성, 즉 데이터가 변경될때 화면을 다시 그릴때 색이 변하지 않고 id마다 유지시키고 싶다면 remember를 쓰는게 맞다.
+        //(todo.id) 라는게 붙는데 이건 remeber의 키값이다. 해쉬맵의 key 같은 느낌이라고 생각하면 될거같다.
         Icon(
             imageVector = todo.icon.imageVector,
             tint = LocalContentColor.current.copy(alpha = iconAlpha), //랜덤한 숫자로 알파값 변경
