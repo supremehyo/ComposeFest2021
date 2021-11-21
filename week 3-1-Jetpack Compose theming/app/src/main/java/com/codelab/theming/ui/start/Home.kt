@@ -34,6 +34,7 @@ import androidx.compose.material.icons.rounded.Palette
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -41,6 +42,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.codelab.theming.R
@@ -109,6 +111,7 @@ fun Header(
     ) {
         Text(
             text = text,
+            style = MaterialTheme.typography.subtitle2, // text 스타일 추가
             modifier = modifier
                 .fillMaxWidth()
                 .background(Color.LightGray)
@@ -142,10 +145,13 @@ fun FeaturedPost(
             val padding = Modifier.padding(horizontal = 16.dp)
             Text(
                 text = post.title,
+                style = MaterialTheme.typography.h6,
                 modifier = padding
+
             )
             Text(
                 text = post.metadata.author.name,
+                style = MaterialTheme.typography.body2,
                 modifier = padding
             )
             PostMetadata(post, padding)
@@ -192,11 +198,17 @@ fun PostItem(
         icon = {
             Image(
                 painter = painterResource(post.imageThumbId),
+                modifier = Modifier.clip(shape = MaterialTheme.shapes.small), // 이미지의 모양을 원하는대로 수정 할 수 있다.
                 contentDescription = null
             )
         },
         text = {
-            Text(text = post.title)
+            Text(
+                text = post.title,
+                style = MaterialTheme.typography.body1.copy(
+                    background = MaterialTheme.colors.secondary //이렇게 text 의 배경색을 넣을수도 있음.
+                )
+            )
         },
         secondaryText = {
             PostMetadata(post)
